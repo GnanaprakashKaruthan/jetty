@@ -20,22 +20,24 @@
 	</dependencies>
 	<build>
 		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.HelloWorld</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<version>2.4</version>
-
-				<configuration>
-					<assembleDirectory>target</assembleDirectory>
-					<programs>
-						<program>
-							<mainClass>com.HelloWorld</mainClass>
-							<name>webapp</name>
-						</program>
-					</programs>
-				</configuration>
-
-
 				<executions>
 					<execution>
 						<id>copy-dependencies</id>
